@@ -52,7 +52,7 @@ def build_parser():
 	parser.add_argument('-vocab_size', type=int, default=30000, help='Vocabulary size to consider')
 
 	# Device Configuration
-	parser.add_argument('-gpu', type=int, default=2, help='Specify the gpu to use')
+	# parser.add_argument('-gpu', type=int, default=2, help='Specify the gpu to use')
 	parser.add_argument('-early_stopping', type=int, default=500, help='Early Stopping after n epoch')
 	parser.add_argument('-seed', type=int, default=6174, help='Default seed to set')
 	parser.add_argument('-logging', type=int, default=1, help='Set to 0 if you do not require logging')

@@ -125,7 +125,7 @@ def main():
 	random.seed(config.seed)
 
 	'''GPU initialization'''
-	device = gpu_init_pytorch(config.gpu)
+	# device = gpu_init_pytorch(config.gpu)
 
 	'''Run Config files/paths'''
 	run_name = config.run_name

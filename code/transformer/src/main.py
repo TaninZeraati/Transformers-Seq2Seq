@@ -33,7 +33,7 @@ log_folder = 'logs'
 model_folder = 'models'
 outputs_folder = 'outputs'
 result_folder = './out/'
-data_path = './data/'
+data_path = '/content/Transformers-Seq2Seq/data/'
 
 def load_data(config, logger):
 	'''

@@ -16,7 +16,7 @@ try:
 except ImportError:
 	import pickle
 
-import wandb
+# import wandb
 
 from src.args import build_parser
 from src.utils.helper import *
@@ -136,12 +136,12 @@ def main():
 	if config.mode == 'test' and config.pretrained_model_name == 'none':
 		config.pretrained_model_name == run_name
 	
-	wandb.init(settings=wandb.Settings(start_method="thread"))
+	# wandb.init(settings=wandb.Settings(start_method="thread"))
 	
-	wandb.init(project=config.project_name, entity="arkil")
-	wandb.init(config={"lr": 0.1})
-	wandb.config.epochs = 4
-	wandb.config.update(args, allow_val_change=True) # adds all of the arguments as config variables
+	# wandb.init(project=config.project_name, entity="arkil")
+	# wandb.init(config={"lr": 0.1})
+	# wandb.config.epochs = 4
+	# wandb.config.update(args, allow_val_change=True) # adds all of the arguments as config variables
 
 	vocab1_path = os.path.join(config.model_path, 'vocab1.p')
 	vocab2_path = os.path.join(config.model_path, 'vocab2.p')

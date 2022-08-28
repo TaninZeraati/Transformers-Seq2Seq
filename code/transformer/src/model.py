@@ -20,7 +20,7 @@ from src.utils.logger import print_log, store_results
 from src.utils.helper import save_checkpoint
 from src.utils.evaluate import cal_score, stack_to_string
 
-import wandb
+# import wandb
 
 from collections import OrderedDict
 
@@ -455,7 +455,7 @@ def train_model(model, train_dataloader, val_dataloader, test_dataloader, gen_da
 			loss = model.trainer(src, sent1_var, sent2_var, config, device, logger)
 			train_loss_epoch += loss
 
-			wandb.log({"train loss per step": loss})
+			# wandb.log({"train loss per step": loss})
 
 			if config.show_train_acc:
 				model.eval()
@@ -470,11 +470,11 @@ def train_model(model, train_dataloader, val_dataloader, test_dataloader, gen_da
 
 		train_loss_epoch = train_loss_epoch / (len(train_dataloader) * config.batch_size)
 
-		wandb.log({"train loss per epoch": train_loss_epoch})
+		# wandb.log({"train loss per epoch": train_loss_epoch})
 
 		if config.show_train_acc:
 			train_acc_epoch = train_acc_epoch_cnt/train_acc_epoch_tot
-			wandb.log({"train accuracy": train_acc_epoch})
+			# wandb.log({"train accuracy": train_acc_epoch})
 		else:
 			train_acc_epoch = 0.0
 
@@ -487,8 +487,8 @@ def train_model(model, train_dataloader, val_dataloader, test_dataloader, gen_da
 
 		if config.dev_set and (config.dev_always or epoch >= config.epochs - (config.eval_last_n - 1)):
 			val_loss_epoch, val_acc_epoch = run_validation(config=config, model=model, val_dataloader=val_dataloader, disp_tok='DEV', voc1=voc1, voc2=voc2, device=device, logger=logger, epoch_num = epoch, validation = True)
-			wandb.log({"validation loss per epoch": val_loss_epoch})
-			wandb.log({"validation accuracy": val_acc_epoch})
+			# wandb.log({"validation loss per epoch": val_loss_epoch})
+			# wandb.log({"validation accuracy": val_acc_epoch})
 		else:
 			val_loss_epoch = float('inf')
 			val_acc_epoch = 0.0
@@ -498,8 +498,8 @@ def train_model(model, train_dataloader, val_dataloader, test_dataloader, gen_da
 		
 		if config.test_set and (config.test_always or epoch >= config.epochs - (config.eval_last_n - 1)):
 			test_loss_epoch, test_acc_epoch = run_validation(config=config, model=model, val_dataloader=test_dataloader, disp_tok='TEST', voc1=voc1, voc2=voc2, device=device, logger=logger, epoch_num = epoch, validation = False)
-			wandb.log({"test loss per epoch": test_loss_epoch})
-			wandb.log({"test accuracy": test_acc_epoch})
+			# wandb.log({"test loss per epoch": test_loss_epoch})
+			# wandb.log({"test accuracy": test_acc_epoch})
 		else:
 			test_loss_epoch = float('inf')
 			test_acc_epoch = 0.0
@@ -509,8 +509,8 @@ def train_model(model, train_dataloader, val_dataloader, test_dataloader, gen_da
 
 		if config.gen_set and (config.gen_always or epoch >= config.epochs - (config.eval_last_n - 1)):
 			gen_loss_epoch, gen_acc_epoch = run_validation(config=config, model=model, val_dataloader=gen_dataloader, disp_tok='GEN', voc1=voc1, voc2=voc2, device=device, logger=logger, epoch_num = epoch, validation = False)
-			wandb.log({"generalization loss per epoch": gen_loss_epoch})
-			wandb.log({"generalization accuracy": gen_acc_epoch})
+			# wandb.log({"generalization loss per epoch": gen_loss_epoch})
+			# wandb.log({"generalization accuracy": gen_acc_epoch})
 		else:
 			gen_loss_epoch = float('inf')
 			gen_acc_epoch = 0.0

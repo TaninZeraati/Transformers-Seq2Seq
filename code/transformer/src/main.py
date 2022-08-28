@@ -136,6 +136,8 @@ def main():
 	if config.mode == 'test' and config.pretrained_model_name == 'none':
 		config.pretrained_model_name == run_name
 
+	wandb.init(settings=wandb.Settings(start_method="fork")
+	
 	wandb.init(project=config.project_name, entity="arkil")
 	wandb.init(config={"lr": 0.1})
 	wandb.config.epochs = 4

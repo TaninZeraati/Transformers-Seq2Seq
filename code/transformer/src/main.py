@@ -126,6 +126,7 @@ def main():
 
 	'''GPU initialization'''
 	# device = gpu_init_pytorch(config.gpu)
+	device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 	'''Run Config files/paths'''
 	run_name = config.run_name

@@ -32,7 +32,7 @@ global data_path
 log_folder = 'logs'
 model_folder = 'models'
 outputs_folder = 'outputs'
-result_folder = './out/'
+result_folder = '/content/drive/MyDrive/DataLab/turkey project/Code/out/'
 data_path = '/content/Transformers-Seq2Seq/data/'
 
 def load_data(config, logger):

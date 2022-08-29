@@ -731,7 +731,7 @@ def run_validation(config, model, val_dataloader, disp_tok, voc1, voc2, device, 
 		new_path = '/content/drive/MyDrive/DataLab/turkey project/Code/out/'
 		csv_file_path = os.path.join(new_path, config.dataset+'.csv')
 		results_df.to_csv(csv_file_path, index = False)
-		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path, outputs_path)
+		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path, config.outputs_path)
 		return sum(scores)/len(scores)
 
 	val_acc_epoch = val_acc_epoch_cnt/val_acc_epoch_tot

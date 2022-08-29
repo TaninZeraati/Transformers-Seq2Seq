@@ -31,7 +31,7 @@ global data_path
 
 log_folder = 'logs'
 model_folder = 'models'
-outputs_folder = '/content/drive/MyDrive/DataLab/turkey project/Code/out/outputs'
+outputs_folder = '/content/drive/MyDrive/DataLab/turkey project/Code/out/'
 result_folder = '/content/drive/MyDrive/DataLab/turkey project/Code/out/'
 data_path = '/content/Transformers-Seq2Seq/data/'
 

@@ -730,7 +730,7 @@ def run_validation(config, model, val_dataloader, disp_tok, voc1, voc2, device, 
 		results_df.columns = ['Source', 'Actual Target', 'Generated Target', 'Score']
 		csv_file_path = os.path.join(config.outputs_path, config.dataset+'.csv')
 		results_df.to_csv(csv_file_path, index = False)
-		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path)
+		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path, csv_file_path)
 		return sum(scores)/len(scores)
 
 	val_acc_epoch = val_acc_epoch_cnt/val_acc_epoch_tot

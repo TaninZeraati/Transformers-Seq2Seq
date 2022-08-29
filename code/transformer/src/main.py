@@ -261,13 +261,13 @@ def main():
 					min_train_loss, min_val_loss, min_test_loss, min_gen_loss, max_train_acc, max_val_acc, max_test_acc, max_gen_acc, best_epoch)
 
 	else:
-		gpu = config.gpu
+		# gpu = config.gpu
 		mode = config.mode
 		dataset = config.dataset
 		batch_size = config.batch_size
 		with open(config_file, 'rb') as f:
 			config = AttrDict(pickle.load(f))
-			config.gpu = gpu
+			# config.gpu = gpu
 			config.mode = mode
 			config.dataset = dataset
 			config.batch_size = batch_size

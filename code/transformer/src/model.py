@@ -728,9 +728,10 @@ def run_validation(config, model, val_dataloader, disp_tok, voc1, voc2, device, 
 	if config.mode == 'test':
 		results_df = pd.DataFrame([sources, act_trgs, gen_trgs, scores]).transpose()
 		results_df.columns = ['Source', 'Actual Target', 'Generated Target', 'Score']
-		csv_file_path = os.path.join('/content/drive/MyDrive/DataLab/turkey project/Code/out/', config.dataset+'.csv')
+		new_path = '/content/drive/MyDrive/DataLab/turkey project/Code/out/'
+		csv_file_path = os.path.join(new_path, config.dataset+'.csv')
 		results_df.to_csv(csv_file_path, index = False)
-		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path, csv_file_path)
+		print("------------------------------- wrintin on csv --------------------------------------", csv_file_path, outputs_path)
 		return sum(scores)/len(scores)
 
 	val_acc_epoch = val_acc_epoch_cnt/val_acc_epoch_tot
